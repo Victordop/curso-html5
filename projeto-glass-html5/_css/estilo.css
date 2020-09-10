@@ -2,12 +2,12 @@
 
 body{
     background-color: dodgerblue;
-    color: whitesmoke;     
+    color: black;     
 }
 
 div#interface{
     width: 900px;
-    background-color: teal;
+    background-color: white;
     margin: -20px auto 10px auto;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, .9);
     padding: 10px 10px 10px 10px;
@@ -19,11 +19,35 @@ header#cabecalho img#icone{
     left: 780px;
 } 
 
+/* aula16 */
 header#cabecalho{
-
+    border-bottom: 2px black solid;
+    height: 150px;
+    background:url(file:///home/victor/Documentos/meus_projetos/curso-html5/projeto-glass-html5/_imagens/glass-logo-peq.jpg) no-repeat 0px 90px;
     
 }
 
+
+
+header#cabecalho h1{
+    font-family: Arial, sans-serif;
+    color: #606060;
+    font-size: 30pt;
+    text-shadow: 1px 1px 1px rgba( 0, 0, 0, 0.6);
+    padding: 0px;
+    margin-bottom: 0px;
+    
+}
+
+header#cabecalho h2{
+    font-family: Arial, sans-serif;
+    color: #888888;
+    font-size: 15pt;
+    padding:0px;
+    margin-top: 0px;
+}
+
+/*fim aula 16 */
 
 p{
     text-align: justify;
