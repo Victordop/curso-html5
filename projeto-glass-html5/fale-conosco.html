@@ -7,6 +7,13 @@
         <link rel="stylesheet" href="_css/form.css">
         
         <script src="/home/victor/Documentos/meus_projetos/curso-html5/projeto-glass-html5/_javascript/funcoes.js"></script>
+        <script>
+            function calc_total(){
+                var qtd= parseInt(document.getElementById('cQnt').value);
+                tot= qtd*1500;
+                document.getElementById('cTot').value= tot
+            }
+        </script>
     
     </head>
 
@@ -45,7 +52,7 @@
             </hgroup>
         </header>
 
-<form method="POST" id="fContato" action="mailto:victor_teste@hotmail.com">
+<form method="POST" id="fContato" action="mailto:victor_teste@hotmail.com" oninput="calc_total();">
     
     <fieldset id="usuario">
         <legend>Identificação do Usuário</legend>
@@ -55,7 +62,8 @@
             <input type="password" name="tSenha" id="cSenha" size="5" maxlength="8" placeholder="8 dígitos" /></p> 
            <p><label for="cMail">E-mail:</label> 
                <input type="email" name="tEmail" id="cMail" size="20" maxlength="40" placeholder="Insira seu e-mail"></p> 
-            <fieldset id="sexo"> <legend>Sexo:</legend> 
+            
+               <fieldset id="sexo"> <legend>Sexo:</legend> 
                 <input type="radio" name="tSexo" id="cMasc" checked> <label for="cMasc">Masculino</label> <br/>
                 <input type="radio" name="tSexo" id="cFem"> <label for="cFem">Feminino</label> 
             </fieldset>
@@ -69,7 +77,7 @@
                 <input type="text" name="tRua" id="cRua" size="20" maxlength="80" placeholder="Rua, n°, Bairro [...]"></p> 
             <p> <label for="cNumero">Número:</label>  
                 <input type="number" name="tNumero" id="cNumero" min="0" max="99"></p>
-            <p><label for="cEst"> Estado:</label> <select name="tEst" id="cEst">
+            <p><label for="cEst">Estado:</label> <select name="tEst" id="cEst">
                 
                 <optgroup label="Região Sudeste">
                 <option value="RJ">Rio de Janeiro</option>
@@ -93,25 +101,32 @@
                <option>Campinas</option>
                <option>Sumaré</option>
            </datalist>
-
-
-
     </fieldset>
     
     <fieldset id="mensagem">
        <legend>Mensagem do Usuário</legend>
             <p><label for="cUrg">Grau de Urgência:</label> Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Máx</p> 
 
-            <p><label for="cMsg"> Mensagem:</label><textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p> 
+            <p><label for="cMsg">Mensagem:</label><textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p> 
     </fieldset>
     
     <fieldset id="pedido">
-        <legend>Quero um Google Glass</legend> 
-           <p><label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
-           <p><label for="cCor">Cor:</label></p> 
-           <p><label for="cQnt">Quantidade:</label></p> 
-           <p> <label for="cTot"> Preço Total: R$</label></p> 
-            [BOTÃO ENVIAR]
+        <legend>Quero um Google Glass</legend>
+
+           <p><input type="checkbox" name="tPed" id="cPed" checked>
+               <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+
+           <p><label for="cCor">Cor:</label>
+            <input type="color" name="tCor" id="cCor" value="#c9c9c1"></p>
+
+           <p><label for="cQnt">Quantidade:</label>
+        <input type="number" name="tQnt" id="cQnt" min="0" max="40" value="0"> </p> 
+
+           <p><label for="cTot"> Preço Total: R$</label>
+        <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly></p>
+        
+        <input type="image" name="tEnviar" src="../projeto-glass-html5/_imagens/botao-enviar.png">
+           
     </fieldset>
 
 </form>
